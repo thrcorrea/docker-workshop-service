@@ -1,0 +1,13 @@
+version: '2'
+services:
+  bank-service:
+    image: localhost/bank-service
+    ports:
+      - "3000:3000"
+    stdin_open: true
+    tty: true
+  docker-workshop-database:
+    image: localhost/docker-workshop-database
+    stdin_open: true
+    tty: true
+
