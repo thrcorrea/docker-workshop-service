@@ -1,8 +1,8 @@
 const Model = require('./Model');
 
-class BankModel extends Model {
+class AccountModel extends Model {
   constructor(database) {
-    super(database, 'banks');
+    super(database, 'accounts');
   }
 
   /**
@@ -28,4 +28,4 @@ class BankModel extends Model {
   }
 }
 
-module.exports = BankModel;
+module.exports = AccountModel;

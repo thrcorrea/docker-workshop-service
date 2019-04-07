@@ -1,11 +1,11 @@
 const { ResourceNotFoundError } = require('../../errors');
 
-class BankController {
+class AccountController {
   /**
    * @param {import('../../container').Container} container
    */
   constructor(container) {
-    this.bankService = container.bankService;
+    this.accountService = container.accountService;
   }
 
 
@@ -20,12 +20,12 @@ class BankController {
     try {
       const { id } = req.params;
 
-      const bank = await this.bankService.get(id);
-      if (!bank) {
+      const account = await this.accountService.get(id);
+      if (!account) {
         throw new ResourceNotFoundError(req.__('error.resourceNotFound'));
       }
 
-      res.send(bank);
+      res.send(account);
     } catch (err) {
       next(err);
     }
@@ -35,13 +35,13 @@ class BankController {
     try {
       const query = req.query;
 
-      const banks = await this.bankService.getAll(query);
+      const accounts = await this.accountService.getAll(query);
 
-      res.send(banks);
+      res.send(accounts);
     } catch (err) {
       next(err);
     }
   }
 }
 
-module.exports = BankController;
+module.exports = AccountController;

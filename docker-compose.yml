@@ -6,8 +6,16 @@ services:
       - "3000:3000"
     stdin_open: true
     tty: true
+  account-service:
+    image: localhost/account-service
+    ports:
+      - "3001:3001"
+    stdin_open: true
+    tty: true
   docker-workshop-database:
     image: localhost/docker-workshop-database
+    ports:
+      - "3306:3306"
     stdin_open: true
     tty: true
 

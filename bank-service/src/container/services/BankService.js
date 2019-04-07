@@ -10,6 +10,10 @@ class BankService {
   get(id) {
     return this.bankModel.get(id);
   }
+
+  getAll(query) {
+    return this.bankModel.getAll(query);
+  }
 }
 
 module.exports = BankService
